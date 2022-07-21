@@ -1,0 +1,74 @@
+/* tablet devices */
+
+@media screen and (max-width: 990px) {
+    .mainAreablogs,
+    .upComingMatches,
+    .breakings{
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 0;
+    }
+    .blog:nth-last-child(-n+4){
+        display: none;
+    }
+    .mainArea{
+        flex-direction: column;
+    }
+    .mainAreaButtons{
+        flex-direction: row-reverse;
+        width: 100%;
+        margin: 20px 0 15px 0;
+    }
+    .mainAreaButtons > .btn{
+        flex-grow: 1;
+    }
+    .mainAreablogs > .btn,
+    .upComingMatches > .btn,
+    .breakings > .btn{
+        display: block;
+    }
+    footer{
+        margin-top: 90px;
+    }
+}
+
+
+/* small devices */
+@media screen and (max-width: 590px) {
+    .banner{
+        flex-direction: column;
+        align-items: center;
+    }
+    .bannerLeft{
+        text-align: center;
+    }
+    .mainAreaButtons{
+        flex-direction: column;
+    }
+    .mainAreablogs,
+    .upComingMatches,
+    .breakings{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 0;
+    }
+    .mainAreablogs > .btn,
+    .upComingMatches > .btn,
+    .breakings > .btn{
+        display: none;
+    }
+    footer{
+        margin-top: 0;
+    }
+    .footerContent > ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footerContent > ul li{
+        margin-bottom: 8px;
+    }
+    .breaking .breakingTop h2{
+        align-self: center;
+    }
+    .blog:nth-last-child(-n+4){
+        display: block;
+    }
+}

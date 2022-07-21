@@ -1,0 +1,310 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600&display=swap');
+
+/* universal resets */
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* root css */
+:root{
+    --primary-clr: #f1f1f1;
+    --secondary-clr: #6047EC;
+    --third-clr: #161616;
+}
+
+.container{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+/* common styles */
+header, section,footer{
+    margin: 20px 0;
+}
+a{
+    text-decoration: none;
+}
+.btn{
+    text-decoration: none;
+    color: var(--third-clr);
+    padding: 2px 10px;
+    font-size: 12px;
+    border: 1px solid var(--third-clr);
+    display: inline-block;
+}
+.btn-2{
+    padding: 10px 20px;
+    background: var(--secondary-clr);
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+.mainAreaButtons > .btn.btn-active{
+    background: var(--secondary-clr);
+    color: var(--primary-clr);
+}
+.mainAreaButtons > .btn{
+    background: var(--primary-clr);
+    text-align: center;
+    color: var(--secondary-clr);
+    font-size: 18px;
+}
+
+.mainAreablogs,
+.upComingMatches,
+.breakings{
+    flex-grow: 1;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+}
+
+.mainAreablogs > .btn,
+.upComingMatches > .btn,
+.breakings > .btn{
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translate(-50%);
+    color: var(--primary-clr);
+    display: none;
+}
+
+.blog,
+.match,
+.breaking{
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    height: fit-content;
+}
+
+
+/* header section starts */
+.banner{
+    border-radius: 30px;
+    background: url(images/banner.jpg) no-repeat;
+    background-size: cover;
+    background-color: var(--third-clr);
+    background-blend-mode: multiply;
+    padding: 30px 30px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-height: 80vh;
+    overflow: hidden;
+    height: fit-content;
+    gap: 20px;
+}
+.bannerLeft{
+    align-self: center;
+}
+.bannerRight,
+.bannerLeft{
+    flex-basis: 50%;
+    height: 100%;
+    color: var(--primary-clr);
+}
+.banner:hover .bannerRight img{
+    transform: scale(1.1);
+}
+.bannerRight{
+    display: flex;
+    justify-content: center;
+}
+.bannerRight img{
+    max-width: 100%;
+    margin-bottom: -20px;
+    max-height: 70vh;
+    transition: transform 250ms ease-in-out;
+}
+.bannerTitle{
+    font-size: clamp(30px, 4.5vw, 70px);
+    margin-bottom: 15px;
+}
+.bannerDesc{
+    font-size: clamp(14px, 1vw, 18px);
+    margin-bottom: 15px;
+}
+.btn.watchLive{
+    font-size: 18px;
+    color: var(--primary-clr);
+}
+.btn.watchLive ion-icon{
+    vertical-align: middle;
+    margin-left: 5px;
+    animation: border 1s linear infinite;
+}
+@keyframes border {
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* header area ends */
+
+
+/* main area start */
+.mainArea{
+    display: flex;
+}
+.mainAreaButtons{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--third-clr);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.blog .thumb{
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.mainAreablogs .blog > .btn{
+    margin-left: 20px;
+}
+.mainAreablogs .blog .info{
+    padding: 20px;
+    padding-bottom: 10px;
+}
+.mainAreablogs .blog .info h2{
+    font-size: clamp(16px, 1vw, 18px);
+    margin-bottom: 10px;
+}
+.infoFooter{
+    display: flex;
+    align-items: center;
+}
+.infoFooter ion-icon{
+    margin-right: 5px;
+    font-size: 18px;
+}
+.infoFooter span{
+    margin-right: 20px;
+}
+
+
+/* upcoming matches */
+.upComingMatches .match{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+}
+.upComingMatches .match .flags{
+    display: flex;
+    align-items: center;
+}
+.upComingMatches .match .flags img{
+    width: 70px;
+    margin: 0 10px;
+}
+.upComingMatches .match h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* breaking new section */
+.breaking .breakingTop{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+.breaking .breakingTop img{
+    max-width: 50%;
+    object-fit: cover;
+    max-height: fit-content;
+    margin-right: 10px;
+}
+.breaking .breakingTop h2{
+    font-size: clamp(16px, .5vw, 20px);
+    line-height: 20px;
+}
+.breaking .breakingBottom {
+    padding: 5px;
+}
+.breaking .breakingBottom h3{
+    font-size: clamp(16px, 1vw, 18px);
+    font-weight: 500;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+.breaking .breakingBottom h3 span{
+    margin-left: 15px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: lowercase;
+}
+/* main area ends */
+
+/* footer start */
+footer{
+    background: var(--third-clr);
+    margin-bottom: 0;
+}
+.footerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+.footerContent img{
+    width: 150px;
+    margin-bottom: 20px;
+}
+.footerContent span{
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ddd, transparent);
+    margin-bottom: 40px;
+}
+.footerContent > ul,
+.socials ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.footerContent > ul li,
+.socials ul li{
+    list-style-type: none;
+    margin: 0 15px;
+}
+.footerContent > ul li a,
+.socials ul li a{
+    color: var(--primary-clr);
+}
+.footerContent > ul li a:hover{
+    color: var(--secondary-clr);
+}
+.socials ion-icon{
+    font-size: 20px;
+    background: var(--secondary-clr);
+    padding: 10px;
+    border-radius: 50%;
+}
+.socials ion-icon:hover{
+    background: var(--primary-clr);
+    color: var(--third-clr);
+    transform: scale(1.1);
+}
+/* footer ends */
